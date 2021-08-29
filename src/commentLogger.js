@@ -26,7 +26,7 @@ const onOpen = () => {
 
 const onError = (event) => {
     console.log(`websocket throw error: ${event}`);
-    connectionStateString.innerHTML = "<span style='color:EC0B43;'>Failed to open websocket.</span>";
+    connectionStateString.innerHTML = "<span style='color:#EC0B43;'>Failed to open websocket.</span>";
 };
 
 const onMessage = (event) => {
