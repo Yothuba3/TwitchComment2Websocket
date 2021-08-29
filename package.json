@@ -23,10 +23,12 @@
     "mac": {
       "target": [
         "dmg"
-      ]
+      ],
+      "icon" : "Build/TC2WS_icon.png"
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon" : "Build/TC2WS_icon.png"
     },
     "nsis": {
       "oneClick": false,
