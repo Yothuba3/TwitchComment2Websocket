@@ -1,17 +1,74 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="index.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="content-lunguage" content="ja">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <title>TwitchComment2WebSocket</title>
 </head>
+
 <body>
-<h1>TwitchComment2WebSocket</h1>
-<p><label>twitchチャンネルURL　<input type="text" id="channelURL"></label></p>
-<p><label>送信先IP　<input type="text" id="clientIP" value="127.0.0.1" size="10"></label>
-    <label>ポート　<input type="text" id ="clientPort" value="7001"  size = "3"></label></p>
-<button id='connectWebSocketButton' class="btn btn-border">WebSocket送信開始</button>
-<p id="connectionState"></p>
-<p><label>コメントプレビュー(alpha.ver)</label></p>
-<p><input type="text" id="comment"></p>
-<script src="commentLogger.js"></script>
+    <div class="topBar">
+        <h1>TwitchComment<span> 2 </span>WebSocket</h1>
+    </div>
+
+    <div class="mainWrap">
+        <div class="main">
+            <div class="urlWrap">
+                <div class="urlLabel">
+                    <p>TwitchチャンネルURL</p>
+                </div>
+                <div class="urlInput">
+                    <input type="text" id="channelURL">
+                </div>
+            </div>
+            <div class="ip-portWrap">
+                <div class="ipWrap">
+                    <div class="ipLabel">
+                        <p>送信先IPアドレス</p>
+                    </div>
+                    <div class="ipInput">
+                        <input type="text" id="clientIP" value="127.0.0.1">
+                    </div>
+                </div>
+
+                <div class="portWrap">
+                    <div class="portLabel">
+                        <p>ポート</p>
+                    </div>
+                    <div class="portInput">
+                        <input type="text" id="clientPort" value="7001">
+                    </div>
+                </div>
+            </div>
+            <div class="sendBtn">
+                <button id='connectWebSocketButton'>
+                    <p>WebSocket送信開始</p>
+                </button>
+            </div>
+
+        </div>
+        <div class="sub">
+            <div class="statusWrap">
+                <div class="statusLabel">
+                    <p>ステータス</p>
+                </div>
+                <div class="statusOutput">
+                    <p id="connectionState"></p>
+                </div>
+            </div>
+            <div class="commentWrap">
+                <div class="commentLabel">
+                    <p>コメントプレビュー(alpha.ver)</p>
+                </div>
+                <div class="commentOutput">
+                    <p><input type="text" id="comment" readonly></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="commentLogger.js"></script>
 </body>
