@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type = "text/css" href="index.css">
+    <title>TwitchComment2WebSocket</title>
+</head>
+<body>
+<h1>TwitchComment2WebSocket</h1>
+<p><label>twitchチャンネルURL　<input type="text" id="channelURL"></label></p>
+<p><label>送信先IP　<input type="text" id="clientIP" value="127.0.0.1" size="10"></label>
+    <label>ポート　<input type="text" id ="clientPort" value="7001"  size = "3"></label></p>
+<button id='connectWebSocketButton' class="btn btn-border">WebSocket送信開始</button>
+<p id="connectionState"></p>
+<p><label>コメントプレビュー(alpha.ver)</label></p>
+<p><input type="text" id="comment"></p>
+<script src="commentLogger.js"></script>
+</body>

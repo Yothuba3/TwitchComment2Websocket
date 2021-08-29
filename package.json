@@ -1,0 +1,37 @@
+{
+  "name": "TwitchComment2WS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "devDependencies": {
+    "tmi.js": "^1.8.5",
+    "electron": "^13.2.2",
+    "electron-builder": "^22.11.7",
+    "jquery": "^3.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:win": "electron-builder --win --x64",
+    "build:mac": "electron-builder --mac --64"
+  },
+  "build": {
+    "appId": "com.yothuba.twitchcomment2ws",
+    "directories": {
+      "output": "dist",
+      "app": "./src"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {}
+}
