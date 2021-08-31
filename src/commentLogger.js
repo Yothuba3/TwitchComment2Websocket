@@ -49,7 +49,7 @@ $('#connectWebSocketButton').on('click', function () {
     const ip = document.getElementById('clientIP');
     const port = document.getElementById('clientPort');
     const channelURL = document.getElementById('channelURL');
-    let commentText = document.getElementById('comment');
+    let commentOutput = document.getElementById('twitchCommentBox');
 
     socket = new WebSocket(`ws://${ip.value}:${port.value}`);
     socket.addEventListener('open', onOpen);
@@ -61,9 +61,12 @@ $('#connectWebSocketButton').on('click', function () {
 
     client.connect();
     client.on('message', (channel, tags, message, self) => {
-        var comment = `${message}`;
-        commentText.value = comment;
+        let comment = document.createElement('p');
+        comment.className = "comment";
+        comment.textContent = `${tags.username}: ${message}`;
+        
+        commentOutput.appendChild(comment);
         //console.log(comment);
-        if (socket.readyState === WebSocket.OPEN) socket.send(comment);
+        if (socket.readyState === WebSocket.OPEN) socket.send(`${message}`);
     });
 });

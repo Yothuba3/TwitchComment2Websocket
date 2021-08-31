@@ -136,7 +136,7 @@ p, span, input {
   box-shadow: 0px 1px 3px 0px var(--shadow-black);
 }
 
-.ipInput input, .portInput input, .commentOutput input {
+.ipInput input, .portInput input, .commentOutput{
   border-radius: 0 0 6px 6px;
 }
 
@@ -156,8 +156,10 @@ p, span, input {
   line-height: 40px;
 }
 
-.commentOutput input {
+.commentOutput{
   height: 138px;
+  overflow:auto;
+  font-size:0.8rem;
 }
 
 .sendBtn {
