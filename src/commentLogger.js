@@ -52,7 +52,7 @@ $('#connectWebSocketButton').on('click', function () {
     const ip = document.getElementById('clientIP');
     const port = document.getElementById('clientPort');
     const channelURL = document.getElementById('channelURL');
-    let commentOutput = document.getElementById('twitchCommentBox');
+    let commentBox = document.getElementById('twitchCommentBox');
     //仕様上socketをnewしなおすのでイベントリスナーは毎回追加
     socket = new WebSocket(`ws://${ip.value}:${port.value}`);
     socket.addEventListener('open', onOpen);
@@ -69,8 +69,12 @@ $('#connectWebSocketButton').on('click', function () {
         comment.className = "comment";
         comment.textContent = `${tags.username}: ${message}`;
         
-        commentOutput.appendChild(comment); //html上にコメント追加
-        commentOutput.scrollTo(0,commentOutput.scrollHeight);
+        //スクロール処理
+        let prevScrollHeight = commentBox.scrollHeight;
+        commentBox.appendChild(comment); //html上にコメント追加
+        let trueScrollValue = commentBox.scrollTop + commentBox.clientHeight;
+        if(prevScrollHeight == trueScrollValue)
+            commentBox.scrollTo(0,commentBox.scrollHeight);
         //console.log(comment);
         //websocketが開通しきる前にコメントがくる場合のためのif
         if (socket.readyState === WebSocket.OPEN) socket.send(`${message}`);
