@@ -4,10 +4,10 @@
   "description": "",
   "main": "src/main.js",
   "devDependencies": {
-    "tmi.js": "^1.8.5",
     "electron": "^13.2.2",
     "electron-builder": "^22.11.7",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "tmi.js": "^1.8.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,15 +20,16 @@
       "output": "dist",
       "app": "./src"
     },
+    "asar":false,
     "mac": {
       "target": [
         "dmg"
       ],
-      "icon" : "Build/TC2WS_icon.png"
+      "icon": "Build/TC2WS_icon.png"
     },
     "win": {
       "target": "nsis",
-      "icon" : "Build/TC2WS_icon.png"
+      "icon": "Build/TC2WS_icon.png"
     },
     "nsis": {
       "oneClick": false,
