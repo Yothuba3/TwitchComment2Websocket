@@ -70,6 +70,7 @@ $('#connectWebSocketButton').on('click', function () {
         comment.textContent = `${tags.username}: ${message}`;
         
         commentOutput.appendChild(comment); //html上にコメント追加
+        commentOutput.scrollTo(0,commentOutput.scrollHeight);
         //console.log(comment);
         //websocketが開通しきる前にコメントがくる場合のためのif
         if (socket.readyState === WebSocket.OPEN) socket.send(`${message}`);
