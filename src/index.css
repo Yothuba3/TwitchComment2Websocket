@@ -76,17 +76,6 @@ p, span, input {
   flex: 1 0 17em;
 }
 
-.versionWrap {
-  width: 90%;
-  margin: 0 auto 20px;
-}
-
-.version {
-  font-size: 0.6em;
-  font-weight: 800;
-  opacity: 0.2;
-}
-
 .urlWrap {
   width: 90%;
   margin: auto;
@@ -127,7 +116,7 @@ p, span, input {
 }
 
 .urlLabel {
-  width: 80%;
+  width: 60%;
 }
 
 .statusLabel, .commentLabel {
