@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/main.js",
   "devDependencies": {
-    "electron": "^13.2.2",
+    "electron": "^13.3.0",
     "electron-builder": "^22.11.7",
     "jquery": "^3.6.0",
     "tmi.js": "^1.8.5"
@@ -20,7 +20,7 @@
       "output": "dist",
       "app": "./src"
     },
-    "asar":false,
+    "asar": false,
     "mac": {
       "target": [
         "dmg"

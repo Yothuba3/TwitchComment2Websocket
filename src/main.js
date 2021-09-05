@@ -11,7 +11,7 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false
     },
-    width: 550, height: 400,
+    width: 900, height: 500,
   });
 
   // メインウィンドウに表示するURLを指定します
@@ -19,7 +19,7 @@ function createWindow() {
   mainWindow.loadFile('index.html');
 
   // デベロッパーツールの起動
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   // メインウィンドウが閉じられたときの処理
   mainWindow.on('closed', () => {
