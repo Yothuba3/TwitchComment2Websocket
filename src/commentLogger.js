@@ -4,7 +4,7 @@ var $ = require('jquery');
 
 //WebSocketの待機状態を表示
 let connectionStateString = document.getElementById('connectionState');
-connectionStateString.innerHTML = "<span style='color:#202020;'>Waiting for Websocket connection...</span>";
+connectionStateString.innerHTML = "<span style='color:#202020;'><span class='stateLamp' style='background-color:#202020;'></span>Waiting for Websocket connection...</span>";
 
 //tmiクライアントの初期設定
 var options = {
@@ -23,12 +23,12 @@ let socket = null;
 //webSocketが開通した場合のイベント
 const onOpen = () => {
     console.log("websocket is open now");
-    connectionStateString.innerHTML = "<span style='color:#3CCEC0;'>Websocket is open now!</span>";
+    connectionStateString.innerHTML = "<span style='color:#3CCEC0;'><span class='stateLamp' style='background-color:#3CCEC0;'></span>Websocket is open now!</span>";
 };
 //websocketがエラーを発生させた場合のイベント
 const onError = (event) => {
     console.log(`websocket throw error: ${event}`);
-    connectionStateString.innerHTML = "<span style='color:#EC0B43;'>Failed to open websocket.</span>";
+    connectionStateString.innerHTML = "<span style='color:#EC0B43;'><span class='stateLamp' style='background-color:#EC0B43;'></span>Failed to open websocket.</span>";
 };
 //未使用 将来的に使うかもなので残しています
 const onMessage = (event) => {
@@ -68,13 +68,13 @@ $('#connectWebSocketButton').on('click', function () {
         let comment = document.createElement('p');
         comment.className = "comment";
         comment.textContent = `${tags.username}: ${message}`;
-        
+
         //スクロール処理
         let prevScrollHeight = commentBox.scrollHeight;
         commentBox.appendChild(comment); //html上にコメント追加
         let trueScrollValue = commentBox.scrollTop + commentBox.clientHeight;
-        if(prevScrollHeight == trueScrollValue)
-            commentBox.scrollTo(0,commentBox.scrollHeight);
+        if (prevScrollHeight == trueScrollValue)
+            commentBox.scrollTo(0, commentBox.scrollHeight);
         //console.log(comment);
         //websocketが開通しきる前にコメントがくる場合のためのif
         if (socket.readyState === WebSocket.OPEN) socket.send(`${message}`);

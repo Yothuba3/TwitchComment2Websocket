@@ -44,6 +44,7 @@ p, span, input {
   padding: 10px;
   max-height: 100px;
   text-align: center;
+  font-size: 0.9rem;
   background-color: var(--bg-black);
   border-bottom: 6px solid var(--main-purple);
   box-shadow: 0px 1px 3px 0px var(--shadow-black);
@@ -51,15 +52,17 @@ p, span, input {
 }
 
 .topBar span {
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: var(--main-purple);
 }
 
 .mainWrap {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   position: absolute;
   width: 96%;
-  height: 90vh;
+  padding: 110px 0 20px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -69,14 +72,19 @@ p, span, input {
   box-shadow: 0px 1px 3px 0px var(--shadow-black);
 }
 
-.main {
-  margin-top: 100px;
-  width: 60%;
+.main, .sub {
+  flex: 1 0 17em;
 }
 
-.sub {
-  margin-top: 100px;
-  width: 40%;
+.versionWrap {
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+.version {
+  font-size: 0.6em;
+  font-weight: 800;
+  opacity: 0.2;
 }
 
 .urlWrap {
@@ -96,7 +104,7 @@ p, span, input {
 }
 
 .statusWrap, .commentWrap {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
@@ -105,19 +113,21 @@ p, span, input {
 }
 
 .urlLabel, .ipLabel, .portLabel, .statusLabel, .commentLabel {
-  width: 260px;
+  width: 100%;
   height: 30px;
   line-height: 30px;
+  font-size: 0.8rem;
   font-weight: 700;
   padding: 0 10px;
   border-radius: 6px 6px 0 0;
+  box-shadow: 0px 1px 3px 0px var(--shadow-black);
   color: var(--text-white);
   background-color: var(--main-purple);
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 }
 
-.ipLabel, .portLabel, .statusLabel, .commentLabel {
-  width: 100%;
+.urlLabel {
+  width: 80%;
 }
 
 .statusLabel, .commentLabel {
@@ -125,7 +135,7 @@ p, span, input {
   text-align: center;
 }
 
-.urlInput input, .ipInput input, .portInput input, .statusOutput, .commentOutput input {
+.urlInput input, .ipInput input, .portInput input, .statusOutput, .commentOutput {
   width: 100%;
   padding: 10px 15px;
   border-radius: 0 6px 6px 6px;
@@ -136,7 +146,7 @@ p, span, input {
   box-shadow: 0px 1px 3px 0px var(--shadow-black);
 }
 
-.ipInput input, .portInput input, .commentOutput{
+.ipInput input, .portInput input, .commentOutput {
   border-radius: 0 0 6px 6px;
 }
 
@@ -151,15 +161,34 @@ p, span, input {
 .statusOutput {
   position: relative;
   height: 40px;
-  font-size: 0.6rem;
-  padding: 0px 40px;
+  font-size: 0.7rem;
   line-height: 40px;
+  padding: 0 auto;
 }
 
-.commentOutput{
-  height: 138px;
-  overflow:auto;
-  font-size:0.8rem;
+.statusOutput p {
+  position: absolute;
+  line-height: 10px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateX(0);
+  -webkit-transform: translateY(-50%) translateX(0);
+  margin: 0 10px;
+}
+
+.stateLamp {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  ;
+  margin: auto 6px;
+}
+
+.commentOutput {
+  height: 136px;
+  overflow: auto;
+  font-size: 0.8rem;
 }
 
 .sendBtn {
