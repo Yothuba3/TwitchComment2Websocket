@@ -3,6 +3,7 @@
   "version": "1.4.1",
   "description": "",
   "main": "src/main.js",
+  "author": "Yothuba <yothuba.10@gmail.com>",
   "devDependencies": {
     "electron": "^13.3.0",
     "electron-builder": "^22.11.7",
@@ -12,7 +13,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:win": "electron-builder --win --x64",
-    "build:mac": "electron-builder --mac --64"
+    "build:mac": "electron-builder --mac --64",
+    "build:linux": "electron-builder --linux --x64"
   },
   "build": {
     "appId": "com.yothuba.twitchcomment2ws",
@@ -34,7 +36,14 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
-    }
+    },
+    "linux" : {
+      "target": [
+        "deb",
+        "rpm"
+      ],
+      "icon" : "Build/TC2WS_icon.png"
+      }
   },
   "dependencies": {}
 }

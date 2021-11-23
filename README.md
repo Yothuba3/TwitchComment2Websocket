@@ -1,7 +1,14 @@
 # TwitchComment2Websocket
 TwicthComment2Websocket(TC2WS)は，Twitchのコメントをwebsocket経由で,  
 外部のアプリケーションへ送ることを目的としてElectron製のソフトウェアです． 
-現在はWindowsのみインストーラーを配布していますがソースコードからmac向けにビルドすることは可能です．   
+現在はWindowsのみインストーラーを配布していますがソースコードからmac,linux向けにビルドすることは可能です．
+各ビルドコマンド  
+
+```
+npm run build:win  
+npm run build:mac  
+npm run build:linux
+```
 <img src="Build/TC2WS_icon.png" width = 40%>  
 <img src="https://github.com/Yothuba3/READMEFiles/blob/main/README/TC2WS/TC2WS_header.png" width=80%>
 # How to install
