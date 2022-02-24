@@ -11,10 +11,13 @@ npm run build:linux
 ```
 <img src="Build/TC2WS_icon.png" width = 40%>  
 <img src="https://github.com/Yothuba3/READMEFiles/blob/main/README/TC2WS/TC2WS_header.png" width=80%>
+
 # How to install  
 ページ右のReleaseからexeファイルをダウンロード可能です．
 exeを実行することでインストーラーが起動します．  
 <img src="https://github.com/Yothuba3/READMEFiles/blob/main/README/TC2WS/README_01.png">
+
+
 # How to Use  
 ソフトウェアはtc2wsという名前でインストールされているため，powertoyなどを利用する場合はtc2wsで名前検索することが可能です．
 
